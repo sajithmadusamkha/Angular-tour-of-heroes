@@ -34,4 +34,15 @@ export class AppComponent {
   numbers = ['one', 'two', 'three', 'four', 'five'];
 
   luckyNumber = 0;
+
+  highlightColor = 'white';
+  isStyled = false;
+
+  highlight(color: string) {
+    this.highlightColor = color;
+  }
+
+  toggleStyle() {
+    this.isStyled = !this.isStyled;
+  }
 }
