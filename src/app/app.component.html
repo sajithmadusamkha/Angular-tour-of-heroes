@@ -11,11 +11,11 @@
     <app-footer></app-footer> -->
 
     <!-- String interpolation -->
-    <h1>String Interpolation</h1>
-    <h3>{{ title }}</h3>
+    <!-- <h1>String Interpolation</h1>
+    <h3>{{ title }}</h3> -->
 
     <!-- Property Binding -->
-    <h1>Property Binding</h1>
+    <!-- <h1>Property Binding</h1>
     <img [src]="imgPath" class="bgImg" />
 
     <h1>Event Binding</h1>
@@ -28,6 +28,58 @@
     <h1>Test</h1>
     <input type="text" [(ngModel)]="inputValue" />
     <span>{{ inputValue }}</span>
-    <button [disabled]="isdisabled" (click)="checkValue()">Submit</button>
+    <button [disabled]="isdisabled" (click)="checkValue()">Submit</button> -->
+
+    <div class="container">
+      <h2>Structural Directives - ngIf</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-success" (click)="approve(true)">
+            Approve
+          </button>
+          <button class="btn btn-danger" (click)="approve(false)">
+            Reject
+          </button>
+        </div>
+        <div class="col-md-12">
+          <p *ngIf="isApproved">You application has been approved</p>
+          <p *ngIf="!isApproved">You application has been rejected</p>
+        </div>
+      </div>
+      <hr />
+      <h2>Structural Directives - ngFor</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <p *ngFor="let num of numbers; let i = index">
+            {{ i + 1 }} - {{ num }}
+          </p>
+        </div>
+      </div>
+      <hr />
+      <h2>Structural Directives - ngSwitch</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="number" name="luckyNumber" [(ngModel)]="luckyNumber" />
+        </div>
+        <div class="col-md-12" [ngSwitch]="luckyNumber">
+          <p *ngSwitchCase="1">Spa Paragon.</p>
+          <p *ngSwitchCase="2">GameDay Catering.</p>
+          <p *ngSwitchCase="3">Darwin Travel.</p>
+          <p *ngSwitchCase="4">Party Plex.</p>
+          <p *ngSwitchCase="5">Pizza Factor</p>
+          <p *ngSwitchCase="6">Acorn Crafts.</p>
+          <p *ngSwitchDefault>Enter number 1 to 6.</p>
+        </div>
+      </div>
+      <hr />
+      <h2>Structural Directives - ngFor</h2>
+      <div class="row">
+        <div class="col-md-12">
+          <p *ngFor="let num of numbers; let i = index">
+            <span *ngIf="(i + 1) % 2 === 0">{{ i + 1 }} - {{ num }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

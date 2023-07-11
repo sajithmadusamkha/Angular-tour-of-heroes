@@ -24,4 +24,14 @@ export class AppComponent {
       this.isdisabled = false;
     }
   }
+
+  isApproved = false;
+
+  approve(status: any) {
+    this.isApproved = status;
+  }
+
+  numbers = ['one', 'two', 'three', 'four', 'five'];
+
+  luckyNumber = 0;
 }
