@@ -1,0 +1,10 @@
+<div>
+  <h1>Parent Component</h1>
+  <input type="text" [(ngModel)]="parentMyName" />
+  <p>This come from child - {{ msgFromchild }}</p>
+</div>
+<hr />
+<app-child
+  [myName]="parentMyName"
+  (sendEmitter)="recievedMsg($event)"
+></app-child>
