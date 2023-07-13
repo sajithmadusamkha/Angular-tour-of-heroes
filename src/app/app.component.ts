@@ -45,4 +45,8 @@ export class AppComponent {
   toggleStyle() {
     this.isStyled = !this.isStyled;
   }
+
+  sendInput(input: any) {
+    console.log(input.value);
+  }
 }

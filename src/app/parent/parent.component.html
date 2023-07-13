@@ -1,10 +1,7 @@
-<div>
-  <h1>Parent Component</h1>
-  <input type="text" [(ngModel)]="parentMyName" />
-  <p>This come from child - {{ msgFromchild }}</p>
-</div>
+<h1>Parent Component</h1>
+<button (click)="toggleChild()">Toggle Child</button>
+<input type="text" [(ngModel)]="firstName" />
 <hr />
-<app-child
-  [myName]="parentMyName"
-  (sendEmitter)="recievedMsg($event)"
-></app-child>
+<app-child *ngIf="isChild" [firstName]="firstName">
+  <h2 #parentContent>This is content from parent</h2>
+</app-child>

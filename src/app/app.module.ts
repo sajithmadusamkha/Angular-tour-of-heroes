@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { FormsModule } from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { CrudService } from './crud.service';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,8 @@ import { ChildComponent } from './child/child.component';
     ParentComponent,
     ChildComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
-  providers: [],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [CrudService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
